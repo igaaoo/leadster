@@ -9,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Image from "next/image";
 
 import { data } from "@/lib/data";
 
@@ -17,14 +18,15 @@ export default function IndexPage() {
     <main className="flex flex-col gap-10">
       <section className="flex w-full flex-col bg-blue-50 py-24 dark:bg-gray-900">
         <div className="flex w-full flex-col items-center ">
-          <sup className="mb-2  rounded-full rounded-es-md border-2 border-blue-500 px-4 py-1 text-xs font-bold text-blue-500">WEBINARS EXCLUSIVOS</sup>
+          <sup className="mb-2 rounded-full rounded-es-md border-2 border-blue-500 px-4 py-1 text-xs font-bold text-blue-500">WEBINARS EXCLUSIVOS</sup>
           <p className="text-center text-4xl font-medium leading-tight tracking-tighter md:text-4xl">
             Menos Conversinha,
           </p>
-          <p className=" text-gradient-blue-blue border-b border-gray-300 bg-clip-text px-4 pb-4 text-center text-6xl font-bold text-transparent" style={
+          <p className="text-gradient-blue-blue  border-b border-gray-300 bg-clip-text px-4 pb-4 text-center text-6xl font-bold text-transparent" style={
             { backgroundImage: "linear-gradient(-45deg, #2c83fb 0%, #1f76f0 100%)" }
           }>
             Mais Conversão
+            <Image src="/asset-header.png" width={40} height={40} alt="Asset Header" className="float-right -ml-6 animate-pulse" />
           </p>
           <sub className="mt-3 text-center text-xs font-medium">
             Conheça as estratégias que <strong> mudaram o jogo </strong>e como aplicá-las no seu negócio
@@ -32,8 +34,9 @@ export default function IndexPage() {
         </div>
       </section>
 
+
       <section className="px-10 lg:px-60">
-        <nav className="flex items-center justify-between border-b-2 pb-4">
+        <div className="flex items-center justify-between border-b-2 pb-4">
           <ul className="flex flex-wrap gap-2">
             <li>
               <Button variant="outline" size="sm">Agências</Button>
@@ -69,7 +72,7 @@ export default function IndexPage() {
               </SelectContent>
             </Select>
           </div>
-        </nav>
+        </div>
 
         <div className="grid grid-cols-3 gap-5 py-10">
           {data.map((item, index) => (
@@ -77,11 +80,30 @@ export default function IndexPage() {
           ))}
         </div>
 
-        <div>
-
+        <div className="flex w-full items-center justify-center gap-4 border-t-2 pt-4">
+          <span className="font-semibold">Página</span>
+          <ul className="flex flex-wrap gap-1">
+            <li>
+              <Button variant="table" >1</Button>
+            </li>
+            <li>
+              <Button variant="table" >2</Button>
+            </li>
+            <li>
+              <Button variant="table" >3</Button>
+            </li>
+            <li>
+              <Button variant="table"  >4</Button>
+            </li>
+          </ul>
         </div>
-
       </section>
+
+
+      <section className="flex flex-col items-center justify-center gap-4 bg-blue-50 py-10 dark:bg-gray-900">
+        <h1>Salve</h1>
+      </section>
+
 
     </main>
   );
